@@ -1,29 +1,49 @@
-public class Calculator {
-    public int add(int num1, int num2) {
-        return num1 + num2;
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    char operator;
+    Double number1, number2, result;
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Choose an operator: +, -, *, or /");
+    operator = input.next().charAt(0);
+
+    System.out.println("Enter first number");
+    number1 = input.nextDouble();
+
+    System.out.println("Enter second number");
+    number2 = input.nextDouble();
+
+    switch (operator) {
+
+      case '+':
+        result = number1 + number2;
+        System.out.println(number1 + " + " + number2 + " = " + result);
+        break;
+
+      case '-':
+        result = number1 - number2;
+        System.out.println(number1 + " - " + number2 + " = " + result);
+        break;
+
+      case '*':
+        result = number1 * number2;
+        System.out.println(number1 + " * " + number2 + " = " + result);
+        break;
+
+      case '/':
+        result = number1 / number2;
+        System.out.println(number1 + " / " + number2 + " = " + result);
+        break;
+
+      default:
+        System.out.println("Invalid operator!");
+        break;
     }
 
-    public int subtract(int num1, int num2) {
-        return num1 - num2;
-    }
-
-    public int multiply(int num1, int num2) {
-        return num1 * num2;
-    }
-
-    public double divide(int num1, int num2) {
-        if (num2 == 0) {
-            System.out.println("Cannot divide by zero!");
-            return Double.NaN;
-        }
-        return (double) num1 / num2;
-    }
-
-    public int modulus(int num1, int num2) {
-        if (num2 == 0) {
-            System.out.println("Cannot calculate modulus with zero!");
-            return -1;
-        }
-        return num1 % num2;
-    }
+    input.close();
+  }
 }
