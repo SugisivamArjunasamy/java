@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class Rectangle {
+    double length;
+    double width;
+    
+    double calculateArea() {
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            Rectangle rectangle = new Rectangle();
+            
+            System.out.print("Enter length of the rectangle: ");
+            rectangle.length = scanner.nextDouble();
+            
+            System.out.print("Enter width of the rectangle: ");
+            rectangle.width = scanner.nextDouble();
+            
+            double area = rectangle.calculateArea();
+            
+            System.out.println("Area of the rectangle: " + area);
+            
+            Double areaWrapper = area; // Autoboxing (primitive to wrapper)
+            System.out.println("Enter the error:");
+            double error = scanner.nextDouble();
+            areaWrapper = areaWrapper + error; // Using the + operator with wrapper class
+            
+            System.out.println("Updated area (after adding 10): " + areaWrapper);
+            
+            if (area > 50) {
+                System.out.println("The rectangle is large.");
+            } else {
+                System.out.println("The rectangle is small.");
+            }
+            
+            System.out.print("Do you want to calculate the area for another rectangle? (yes/no): ");
+            String choice = scanner.next();
+            
+            if (!choice.equalsIgnoreCase("yes")) {
+                break;
+            }
+        }
+        
+        scanner.close();
+    }
+}
