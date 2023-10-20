@@ -1,0 +1,57 @@
+import java.util.Scanner;
+class en
+{
+  private String name;
+  private int age;
+  private int number;
+  String getName()
+    {
+      return name;
+    }
+  String setName(String name)
+    {
+      this.name = name;
+      return name;
+    }  
+  int getage()
+    {
+      return age;
+    }
+  int setage(int age)
+    {
+      this.age = age;
+      return 0;
+    }
+  int getnumber()
+    {
+      return number;
+    }
+  int setnumber(int number)
+    {
+      this.number = number;
+      return 0;
+    }  
+}
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your name");
+    String name = sc.nextLine();
+    System.out.println("Enter your age");
+    int age = sc.nextInt();
+    System.out.println("Enter your number");
+    int number = sc.nextInt();
+
+    en e = new en();
+    e.setName(name);
+    e.setage(age);
+    e.setnumber(number); 
+    System.out.println("Name: "+e.getName());
+    System.out.println("Age: "+e.getage());
+    System.out.println("Number: "+e.getnumber());
+    
+  }
+}
